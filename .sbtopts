@@ -1,0 +1,4 @@
+-J-Dhttps.proxyHost=10.144.1.10
+-J-Dhttps.proxyPort=8080
+-J-Dhttp.proxyHost=10.144.1.10
+-J-Dhttp.proxyPort=8080
