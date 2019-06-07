@@ -1,0 +1,25 @@
+<configuration>
+
+    <contextName>riders timelap</contextName>
+
+    <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} %trace %-5level %logger{0} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.zaxxer.hikari.pool.HikariPool" level="WARN">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <logger name="io.swagger" level="INFO">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+    <root level="${LOG_LEVEL:-WARN}">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
