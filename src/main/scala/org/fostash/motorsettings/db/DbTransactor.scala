@@ -4,7 +4,7 @@ import cats.effect._
 import doobie.hikari._
 import doobie.util.ExecutionContexts
 import org.flywaydb.core.Flyway
-import org.fostash.motorsettings.{Config, Database}
+import org.fostash.motorsettings.Config
 
 object DbTransactor { //extends Database[IO] {
 

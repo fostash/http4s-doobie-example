@@ -1,5 +1,5 @@
 lazy val commonSettings = Seq(
-  name := "motorsettings-be",
+  name := "http4s-test-doobie",
   organization    := "org.fostash",
   version := "1.0-SNAPSHOT",
   scalaVersion := "2.12.8",

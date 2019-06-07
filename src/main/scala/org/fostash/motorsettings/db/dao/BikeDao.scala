@@ -11,9 +11,7 @@ import org.fostash.motorsettings.db.entities.Bike
 import org.fostash.motorsettings.repository.BikeRepository
 import org.fostash.motorsettings.repository.model.{BikeRequest, BikeResponse}
 
-object BikeQueries {
-
-  def likeStr(str: String) = s"%$str%"
+object BikeQueries extends BaseQueryOps {
 
   def readBike(bikeId: Long): doobie.Query0[Bike] = sql"SELECT id, brand, cc FROM bikes WHERE id = $bikeId".query[Bike]
   def readBikes(filter: String): doobie.Query0[Bike] = sql"SELECT id, brand, cc FROM bikes WHERE brand like ${likeStr(filter)}".query[Bike]

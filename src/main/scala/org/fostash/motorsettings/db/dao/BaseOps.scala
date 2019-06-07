@@ -8,6 +8,10 @@ import doobie.util.transactor.Transactor
 import doobie.util.update.Update0
 import fs2.Stream
 
+trait BaseQueryOps {
+  def likeStr(str: String) = s"%$str%"
+}
+
 trait BaseOps[F[_]] {
 
   def transactor: Transactor[F]

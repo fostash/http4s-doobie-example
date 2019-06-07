@@ -33,7 +33,7 @@ object RiderBikeQueries {
     sql"DELETE FROM rider_bikes WHERE id = $riderBikeId".update
 }
 
-class RiderBikeDao[F[_]](val transactor: Transactor[F])(implicit l: Logger[IO], w: Bracket[F, Throwable], F: Sync[F]) extends RiderBikeRepository[F] with BaseOps[F] {
+class RiderBikeDao[F[_]](val transactor: Transactor[F])(implicit l: Logger[F], w: Bracket[F, Throwable], F: Sync[F]) extends RiderBikeRepository[F] with BaseOps[F] {
 
   override def addBikeToRider(
     riderBikeRequest: RiderBikeRequest): F[RiderBikeResponse] = for {
